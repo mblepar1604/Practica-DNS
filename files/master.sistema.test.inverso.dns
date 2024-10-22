@@ -1,0 +1,14 @@
+;
+; sistema.test inverso
+: 57.168.192
+;
+$TTL	86400
+@	IN	SOA	sistema.test. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	sistema.test.
+Y	IN	PTR	sistem.test.
