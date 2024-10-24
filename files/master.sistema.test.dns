@@ -9,5 +9,5 @@ $TTL	86400
 			2419200		; Expire
 			  86400 )	; Negative Cache TTL
 ;
-@	IN	NS	sistema.test.
+@	IN	NS	tierra.sistema.test.
 sistema.test.	IN	A	192.168.57.X
