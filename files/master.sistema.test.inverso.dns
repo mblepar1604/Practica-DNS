@@ -8,7 +8,7 @@ $TTL	86400
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
-			 604800 )	; Negative Cache TTL
+			 7200 )		; Negative Cache TTL (2 horas)
 ;
 @	IN	NS	tierra.sistema.test.
 Y	IN	PTR	sistem.test.

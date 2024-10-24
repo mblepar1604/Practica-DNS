@@ -14,6 +14,7 @@ zone "sistema.test" {
 
 zone "57.168.192.in-addr.arpa" {
     type master;
-    file "/var/lib/bind/db.sistema.test.rev
+    file "/var/lib/bind/db.sistema.test.rev;
+    allow-transfer { 192.168.57.102; };
 }
 
