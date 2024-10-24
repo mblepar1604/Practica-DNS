@@ -10,9 +10,10 @@ Vagrant.configure("2") do |config|
     venus.vm.network "private_network", ip: "192.168.57.102"
     venus.vm.provision "shell", inline: <<-SHELL
       sudo su
-      cp -v /vagrant/files/named /etc/default
-      cp -v /vagrant/files/named.conf.options /etc/bind
-      cp -v /vagrant/files/slavenamed.conf.local /etc/bind/named.conf.local
+      cp -v /vagrant/files/comun/named /etc/default
+      cp -v /vagrant/files/comun/named.conf.options /etc/bind
+      cp -v /vagrant/files/slave/slavenamed.conf.local /etc/bind/named.conf.local
+      cp -v /vagrant/files/slave/resolv.conf /etc
 
       systemctl reload bind9
       systemctl status bind9
@@ -23,11 +24,12 @@ Vagrant.configure("2") do |config|
     tierra.vm.network "private_network", ip: "192.168.57.103"
     tierra.vm.provision "shell", inline: <<-SHELL
     sudo su
-      cp -v /vagrant/files/named /etc/default
-      cp -v /vagrant/files/named.conf.options /etc/bind
-      cp -v /vagrant/files/masternamed.conf.local /etc/bind/named.conf.local
-      cp -v /vagrant/files/master.sistema.test.dns /var/lib/bind/db.sistema.test
-      cp -v /vagrant/files/master.sistema.test.inverso.dns /var/lib/bind/db.sistema.test.rev
+      cp -v /vagrant/files/comun/named /etc/default
+      cp -v /vagrant/files/comun/named.conf.options /etc/bind
+      cp -v /vagrant/files/master/masternamed.conf.local /etc/bind/named.conf.local
+      cp -v /vagrant/files/master/master.sistema.test.dns /var/lib/bind/db.sistema.test
+      cp -v /vagrant/files/master/master.sistema.test.inverso.dns /var/lib/bind/db.sistema.test.rev
+      cp -v /vagrant/files/master/resolv.conf /etc
 
       # Cambiar permisos para que Bind pueda acceder a los archivos de zona
       chown bind:bind /var/lib/bind/db.sistema.test
