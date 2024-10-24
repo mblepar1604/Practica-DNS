@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
       cp -v /vagrant/files/named.conf.options /etc/bind
       cp -v /vagrant/files/slavenamed.conf.local /etc/bind/named.conf.local
 
-      systemctl reload named
-      systemctl status named
+      systemctl reload bind9
+      systemctl status bind9
     SHELL
   end
   
@@ -29,8 +29,12 @@ Vagrant.configure("2") do |config|
       cp -v /vagrant/files/master.sistema.test.dns /var/lib/bind/db.sistema.test
       cp -v /vagrant/files/master.sistema.test.inverso.dns /var/lib/bind/db.sistema.test.rev
 
-      systemctl reload named
-      systemctl status named
+      # Cambiar permisos para que Bind pueda acceder a los archivos de zona
+      chown bind:bind /var/lib/bind/db.sistema.test
+      chown bind:bind /var/lib/bind/db.sistema.test.rev
+
+      systemctl reload bind9
+      systemctl status bind9
     SHELL
   end
 end
