@@ -3,7 +3,7 @@
 ;
 $TTL	86400
 @	IN	SOA	sistema.test. admin.sistema.test. (
-			      1		; Serial
+			      7e		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire

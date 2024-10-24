@@ -47,4 +47,4 @@ PASO 4: Segunda modificación de archivos de configuración para que:
 RESOLUCIÓN DE ERRORES:
 
 1. Se ha extraído de la máquina virtual el archivo resolv.conf para su modificacion
-![alt text](img/image-re-1.png)
+![alt text](img/image-re-1.png) ![alt text](img/image-re-1-2.png)

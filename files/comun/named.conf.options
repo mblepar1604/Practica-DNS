@@ -1,7 +1,7 @@
 acl confiables {
 	127.0.0.0/8;
 	192.168.57.0/24;
-}
+};
 
 options {
 	directory "/var/cache/bind";

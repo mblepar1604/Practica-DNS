@@ -1,14 +1,18 @@
 ;
 ; sistema.test inverso
-: 57.168.192
 ;
-$TTL	86400
-@	IN	SOA	sistema.test. admin.sistema.test. (
-			      1		; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 7200 )		; Negative Cache TTL (2 horas)
-;
-@	IN	NS	tierra.sistema.test.
-Y	IN	PTR	sistem.test.
+$TTL 86400
+@   IN  SOA sistema.test. admin.sistema.test. (
+                7 			; Serial 
+                604800     	; Refresh 
+                86400      	; Retry 
+                2419200    	; Expire 
+                7200 )     	; Negative Cache TTL (2 horas)
+
+@       IN  NS  tierra.sistema.test.
+
+; Registros PTR para resolver IPs a nombres de dominio
+101     IN  PTR  mercurio.sistema.test.
+102     IN  PTR  venus.sistema.test.
+103     IN  PTR  tierra.sistema.test.
+104     IN  PTR  marte.sistema.test.
