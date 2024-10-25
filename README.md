@@ -50,3 +50,29 @@ RESOLUCIÓN DE ERRORES:
 ![alt text](img/image-re-1-1.png) ![alt text](img/image-re-1-2.png)
 
 2. Se han corregido errores de escritura de los archivos de configuración
+
+------------------------------------------------------------------------------------
+
+COMPROBACIÓN DE FUNCIONAMIENTO:
+
+1. Puedes resolver los registros tipo A
+![alt text](img/image-cf-1-1.png)
+
+2. Comprueba que se pueden resolver de forma inversa sus direcciones IP.
+![alt text](img/image-cf-1-2.png)
+
+3. Puedes resolver los alias ns1.sistema.test y ns2.sistema.test.
+![alt text](img/image-cf-1-3.png)
+
+4. Realiza la consulta para saber los servidores MX de sistema.test
+![alt text](img/image-cf-1-4.png)
+
+5. Comprueba que se ha realizado la transferencia de la zona entre el servidor DNS maestro y el
+esclavo. Revisa los logs o realiza una consulta del registro AXFR.
+![alt text](img/image-cf-1-5.png)
+
+6. Comprueba que tanto maestro como esclavo pueden contestar a las mismas preguntas.
+![alt text](img/image-cf-1-6.png)
+
+7. Comprobacion mediante archivo test.sh
+![alt text](img/image-cf-1-7.png)

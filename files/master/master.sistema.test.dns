@@ -3,7 +3,7 @@
 ;
 $TTL	86400
 @	IN	SOA	sistema.test. admin.sistema.test. (
-			12			; Serial
+			13			; Serial
 			604800		; Refresh
 			86400		; Retry
 			2419200		; Expire
@@ -24,4 +24,4 @@ ns2     IN  CNAME   venus.sistema.test.
 mail    IN  CNAME 	marte.sistema.test.
 
 ; Registro MX para el servidor de correo
-@       IN  MX  10 marte.sistema.test.
+@       IN  MX  marte.sistema.test.
