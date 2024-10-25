@@ -3,11 +3,11 @@
 ;
 $TTL	86400
 @	IN	SOA	sistema.test. admin.sistema.test. (
-			      8		; Serial
-			 604800		; Refresh
-			  86400		; Retry
+			11			; Serial
+			604800		; Refresh
+			86400		; Retry
 			2419200		; Expire
-			  7200 )	; Negative Cache TTL (2 horas)
+			7200 )		; Negative Cache TTL (2 horas)
 ;
 @	IN	NS	tierra.sistema.test.
 @	IN 	NS	venus.sistema.test.
@@ -19,8 +19,8 @@ venus    IN  A   192.168.57.102
 marte    IN  A   192.168.57.104
 
 ; Alias (CNAME) para mail y servidores NS
-ns1     IN  A   192.168.57.103  ; Alias de tierra
-ns2     IN  A   192.168.57.102  ; Alias de venus
+ns1     IN  CNAME   tierra.sistema.test  ; Alias de tierra
+ns2     IN  CNAME   venus.sistema.test  ; Alias de venus
 mail    IN  CNAME marte.sistema.test.
 
 ; Registro MX para el servidor de correo

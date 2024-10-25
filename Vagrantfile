@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
       cp -v /vagrant/files/slave/slavenamed.conf.local /etc/bind/named.conf.local
       cp -v /vagrant/files/slave/resolv.conf /etc
 
+      # Reiniciar el servicio de bind9 y el servicio de networking (para el resol.conf)
+      systemctl restart networking
       systemctl reload bind9
       systemctl status bind9
     SHELL
@@ -26,7 +28,7 @@ Vagrant.configure("2") do |config|
       mkdir -p /var/lib/bind
     SHELL
     tierra.vm.provision "shell", name: "copiar_archivos_master", inline: <<-SHELL
-    sudo su
+      sudo su
       cp -v /vagrant/files/comun/named /etc/default
       cp -v /vagrant/files/comun/named.conf.options /etc/bind
       cp -v /vagrant/files/master/masternamed.conf.local /etc/bind/named.conf.local
@@ -40,7 +42,8 @@ Vagrant.configure("2") do |config|
       chmod 644 /var/lib/bind/db.sistema.test
       chmod 644 /var/lib/bind/db.sistema.test.rev
 
-
+      # Reiniciar el servicio de bind9 y el servicio de networking (para el resol.conf)
+      systemctl restart networking
       systemctl reload bind9
       systemctl status bind9
     SHELL
